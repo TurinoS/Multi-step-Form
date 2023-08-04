@@ -19,7 +19,7 @@ export default function Input({ type, name, placeholder, label }: InputProps) {
     return(
         <>
             <label htmlFor={name}>{label}</label>
-            <StyledInput type={type} name={name} id={name} placeholder={placeholder} />
+            <StyledInput type={type} name={name} id={name} placeholder={placeholder} required />
         </>
     )
 }
