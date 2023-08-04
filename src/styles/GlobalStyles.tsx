@@ -4,22 +4,28 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
     :root {
-        --black: #0f0f0f;
-        --white: #f0f0f0;
-        --gray: #6a6a6a;
-        --radius: 15px;
+        --marine-blue: hsl(213, 96%, 18%);
+        --purplish-blue: hsl(243, 100%, 62%);
+        --pastel-blue: hsl(228, 100%, 84%);
+        --light-blue: hsl(206, 94%, 87%);
+        --strawberry-red: hsl(354, 84%, 57%);
+        --cool-gray: hsl(231, 11%, 63%);
+        --light-gray: hsl(229, 24%, 87%);
+        --magnolia: hsl(217, 100%, 97%);
+        --alabaster: hsl(231, 100%, 99%);
+        --white: hsl(0, 0%, 100%);
     }
 
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: sans-serif;
+        font-family: Ubuntu, sans-serif;
     }
 
     body {
-        background-color: var(--black);
-        color: var(--white);
+        background-color: var(--magnolia);
+        color: var(--marine-blue);
         max-height: 100vw;
         width: 100%;
     }
