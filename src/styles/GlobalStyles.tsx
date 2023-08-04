@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
         --black: #0f0f0f;
         --white: #f0f0f0;
         --gray: #6a6a6a;
+        --radius: 15px;
     }
 
     * {
