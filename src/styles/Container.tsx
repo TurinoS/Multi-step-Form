@@ -3,7 +3,7 @@ import bg from '../assets/bg-sidebar-desktop.svg';
 
 export const Container = styled.div`
     background-color: var(--white);
-    box-shadow: 2px 2px 6px 2px var(--marine-blue);
+    box-shadow: 2px 2px 6px 2px var(--pastel-blue);
     margin: 15vh auto;
     padding: 1em;
     width: 55vw;

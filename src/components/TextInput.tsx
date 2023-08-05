@@ -10,16 +10,15 @@ const StyledInput = styled.input`
 
 interface InputProps {
     label: string,
-    type: string,
     name: string,
     placeholder: string,
 }
 
-export default function Input({ type, name, placeholder, label }: InputProps) {
+export default function TextInput({ name, placeholder, label }: InputProps) {
     return(
         <>
             <label htmlFor={name}>{label}</label>
-            <StyledInput type={type} name={name} id={name} placeholder={placeholder} required />
+            <StyledInput type='text' name={name} id={name} placeholder={placeholder} required />
         </>
     )
 }

@@ -12,7 +12,7 @@ export const FormContainer = styled.section`
   }
 `
 
-export const StyledForm = styled.form`
+export const StyledForm1 = styled.form`
   display: flex;
   flex-direction: column;
   margin-top: 1em;

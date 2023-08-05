@@ -1,10 +1,9 @@
 'use client'
 
 import Steps from '@/components/Steps';
-import Input from '@/components/Input';
 import { Container, StepsContainer } from '@/styles/Container';
-import { FormContainer, StyledForm } from '@/styles/Step1.styles';
-import { Button } from '@/styles/Button.style';
+import { FormContainer } from '@/styles/Step1.styles';
+import Form1 from '@/components/Form1';
 
 export default function Home() {
   return (
@@ -18,12 +17,7 @@ export default function Home() {
         <FormContainer>
           <h1>Dados pessoais</h1>
           <p>Por favor informe seu nome, email e telefone</p>
-          <StyledForm>
-            <Input label='Nome' name='name' type='text' placeholder='ex: Luiz da Silva' />
-            <Input label='E-mail' name='email' type='email' placeholder='ex: luiz@silva.com' />
-            <Input label='Telefone' name='phone' type='phone' placeholder='ex: +55 (12) 34567-8989' />
-            <Button type='submit'>Próximo</Button>
-          </StyledForm>
+          <Form1 />
         </FormContainer>
     </Container>
   )
