@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const FormContainer = styled.section`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: .5em;
   padding: 2em 4em;
   width: 70%;
