@@ -25,7 +25,7 @@ const StyledForm3 = styled.form`
     }
 `  
 
-export default function Step2() {
+export default function Step3() {
   return (
     <Container>
         <StepsContainer>
