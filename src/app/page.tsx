@@ -4,7 +4,6 @@ import Steps from '@/components/Steps';
 import { Container, StepsContainer } from '@/styles/Container';
 import { FormContainer } from '@/styles/Step1.styles';
 import Form1 from '@/components/Form1';
-import Link from 'next/link';
 import LinkSection from '@/components/LinkSection';
 
 export default function Home() {

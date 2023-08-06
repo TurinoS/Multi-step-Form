@@ -49,9 +49,9 @@ export default function Step2() {
                 <p>Escolha seu plano e se pretende pagar o plano anual ou mensal</p>
             </div>
           <StyledForm2>
-            <RadioInput label='Iniciante' formStep='1' formName='step2' imgSrc={icon1} />
-            <RadioInput label='Avançado' formStep='2' formName='step2' imgSrc={icon2} />
-            <RadioInput label='Profissional' formStep='3' formName='step2' imgSrc={icon3} />
+            <RadioInput label='Iniciante' formStep='1' formName='step2' imgSrc={icon1} price='9' time='m' />
+            <RadioInput label='Avançado' formStep='2' formName='step2' imgSrc={icon2} price='12' time='m' />
+            <RadioInput label='Profissional' formStep='3' formName='step2' imgSrc={icon3} price='15' time='m' />
             <section>
                 <p>Mensal</p>
                 <Switch 

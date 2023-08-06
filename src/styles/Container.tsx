@@ -4,10 +4,10 @@ import bg from '../assets/bg-sidebar-desktop.svg';
 export const Container = styled.div`
     background-color: var(--white);
     box-shadow: 2px 2px 6px 2px var(--pastel-blue);
-    margin: 15vh auto;
+    margin: 10vh auto;
     padding: 1em;
-    width: 55vw;
-    height: 70vh;
+    width: 60vw;
+    height: 80vh;
     border-radius: 15px;
     display: flex;
 `
