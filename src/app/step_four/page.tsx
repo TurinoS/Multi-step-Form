@@ -1,75 +1,10 @@
 "use client";
 
-import styled from "styled-components";
-import Steps from "@/components/Steps";
-import { Container, StepsContainer } from "@/styles/Container";
-import { FormContainer } from "@/styles/Step1.styles";
-import LinkSection from "@/components/LinkSection";
 import Link from "next/link";
-
-const StyledForm4 = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 1em;
-  gap: 0.25em;
-  background-color: var(--light-gray);
-  border-radius: 10px;
-
-  & .container {
-    padding: 0.75em 2em;
-
-    .principal {
-      border-bottom: 2px solid var(--cool-gray);
-      font-weight: 600;
-
-      & p {
-        color: var(--marine-blue);
-      }
-    }
-  }
-
-  & section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5em;
-    width: 100%;
-    padding: 1em 0;
-
-    & p {
-      display: flex;
-      flex-direction: column;
-      color: var(--cool-gray);
-      font-weight: 600;
-
-      & a {
-        font-weight: 400;
-        color: var(--cool-gray);
-        font-weight: 600;
-      }
-    }
-
-    & span {
-      font-size: 15px;
-    }
-  }
-`;
-
-const Total = styled.div`
-    display: flex;
-    justify-content: space-between;
-    padding: .5em 2em;
-
-    & p {
-      color: var(--cool-gray);
-      font-weight: 600;
-    }
-
-    & span {
-      font-size: 20px;
-      color: var(--purplish-blue);
-    }
-`
+import Steps from "@/components/Steps";
+import LinkSection from "@/components/LinkSection";
+import { Container, StepsContainer } from "@/styles/Container";
+import { FormContainer, StyledForm4, Total } from "@/components/StyledForms";
 
 export default function Step4() {
   return (
