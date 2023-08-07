@@ -1,12 +1,16 @@
 "use client";
 
+import { useContext } from 'react';
 import Steps from "@/components/Steps";
 import LinkSection from "@/components/LinkSection";
 import TextInput from "@/components/TextInput";
 import { Container, StepsContainer } from "@/styles/Container";
 import { FormContainer, StyledForm1 } from "@/components/StyledForms";
+import { AppContext } from '@/context/AppContext';
 
 export default function Home() {
+  const { handleUserName, handleUserEmail, handleUserPhone } = useContext(AppContext)
+
   return (
     <Container>
       <StepsContainer>
@@ -21,16 +25,18 @@ export default function Home() {
           <p>Por favor informe seu nome, email e telefone</p>
         </div>
         <StyledForm1>
-          <TextInput label="Nome" name="name" placeholder="ex: Luiz da Silva" />
+          <TextInput label="Nome" name="name" placeholder="ex: Luiz da Silva" handleFunction={(e) => handleUserName(e)} />
           <TextInput
             label="E-mail"
             name="email"
             placeholder="ex: luiz@silva.com"
+            handleFunction={(e) => handleUserEmail(e)}
           />
           <TextInput
             label="Telefone"
             name="phone"
             placeholder="ex: +55 (12) 34567-8989"
+            handleFunction={(e) => handleUserPhone(e)}
           />
         </StyledForm1>
         <LinkSection hrefBack="/" hrefNext="/step_two" display={false} />

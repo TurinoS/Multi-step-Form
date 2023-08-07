@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ChangeEvent } from 'react';
 
 const StyledInput = styled.input`
     width: 100%;
@@ -12,13 +13,14 @@ interface InputProps {
     label: string,
     name: string,
     placeholder: string,
+    handleFunction: (e: ChangeEvent<HTMLInputElement>) => void,
 }
 
-export default function TextInput({ name, placeholder, label }: InputProps) {
+export default function TextInput({ name, placeholder, label, handleFunction }: InputProps) {
     return(
         <>
             <label htmlFor={name}>{label}</label>
-            <StyledInput type='text' name={name} id={name} placeholder={placeholder} required />
+            <StyledInput type='text' name={name} id={name} placeholder={placeholder} onChange={handleFunction} required />
         </>
     )
 }
