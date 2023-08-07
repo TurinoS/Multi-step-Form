@@ -9,7 +9,13 @@ import { FormContainer, StyledForm1 } from "@/styles/StyledForms";
 import { AppContext } from '@/context/AppContext';
 
 export default function Home() {
-  const { handleUserName, handleUserEmail, handleUserPhone, userName, userEmail, userPhone } = useContext(AppContext)
+  const { handleUserName, handleUserEmail, handleUserPhone, userName, userEmail, userPhone, filledStep1, setFilledStep1 } = useContext(AppContext)
+
+  if(userName.length > 3 && userEmail.length > 9 && userPhone.length > 10) {
+    setFilledStep1(true)
+  } else {
+    setFilledStep1(false)
+  }
 
   return (
     <Container>
@@ -41,7 +47,7 @@ export default function Home() {
             handleFunction={(e) => handleUserPhone(e)}
           />
         </StyledForm1>
-        <LinkSection hrefBack="/" hrefNext="/step_two" display={false} />
+        <LinkSection hrefBack="/" hrefNext="/step_two" display={false} filled={filledStep1} />
       </FormContainer>
     </Container>
   );

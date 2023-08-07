@@ -28,19 +28,30 @@ const StyledLinkSection = styled.div`
       transition: 400ms;
     }
   }
+
+  & .unfilled {
+    padding: 1em 2em;
+    align-self: flex-end;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--strawberry-red);
+    color: var(--cool-gray);
+    font-size: 16px;
+  }
 `;
 
 interface LinkSectionProps {
   hrefBack: string,
   hrefNext: string,
   display: boolean,
+  filled: boolean,
 }
 
-export default function LinkSection({ hrefBack, hrefNext, display }: LinkSectionProps) {
+export default function LinkSection({ hrefBack, hrefNext, display, filled }: LinkSectionProps) {
   return (
     <StyledLinkSection>
       {display ? <Link href={hrefBack} className="display">Voltar</Link> : <div></div>}
-      <Link href={hrefNext} className="button-style">Próximo</Link>
+      {!filled ? <div className="unfilled">Próximo</div> : <Link href={hrefNext} className="button-style">Próximo</Link>}
     </StyledLinkSection>
   );
 }

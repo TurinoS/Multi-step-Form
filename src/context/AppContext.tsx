@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, ReactNode, createContext, ChangeEvent } from "react";
+import { useState, ReactNode, createContext, ChangeEvent, Dispatch, SetStateAction } from "react";
 
 type AppContextType = {
   handleUserName: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -17,15 +17,19 @@ type AppContextType = {
   handleArcade: () => void;
   handleAdvanced: () => void;
   handlePro: () => void;
+  filledStep1: boolean;
+  setFilledStep1: Dispatch<SetStateAction<boolean>>;
+  filledStep2: boolean;
+  setFilledStep2: Dispatch<SetStateAction<boolean>>;
 };
 
 export const AppContext = createContext<AppContextType>({
   handleUserName: () => {},
   handleUserEmail: () => {},
   handleUserPhone: () => {},
-  userName: '',
-  userEmail: '',
-  userPhone: '',
+  userName: "",
+  userEmail: "",
+  userPhone: "",
   yearly: false,
   arcade: false,
   advanced: false,
@@ -34,6 +38,10 @@ export const AppContext = createContext<AppContextType>({
   handleArcade: () => {},
   handleAdvanced: () => {},
   handlePro: () => {},
+  filledStep1: false,
+  setFilledStep1: () => {},
+  filledStep2: false,
+  setFilledStep2: () => {},
 });
 
 export function AppContextProvider({ children }: { children: ReactNode }) {
@@ -41,6 +49,7 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPhone, setUserPhone] = useState("");
+  const [filledStep1, setFilledStep1] = useState(false);
 
   //          ---------------  States do Step 2  ---------------
 
@@ -48,6 +57,7 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
   const [arcade, setArcade] = useState(false);
   const [advanced, setAdvanced] = useState(false);
   const [pro, setPro] = useState(false);
+  const [filledStep2, setFilledStep2] = useState(false);
 
   //          ***************  Functions do Step 1  ***************
 
@@ -93,10 +103,12 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
         userName,
         userEmail,
         userPhone,
-          yearly,
-          arcade,
-          advanced,
-          pro,
+        yearly,
+        arcade,
+        advanced,
+        pro,
+        filledStep1,
+        filledStep2,
         handleUserName,
         handleUserEmail,
         handleUserPhone,
@@ -104,6 +116,8 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
         handleArcade,
         handleAdvanced,
         handlePro,
+        setFilledStep1,
+        setFilledStep2,
       }}
     >
       {children}

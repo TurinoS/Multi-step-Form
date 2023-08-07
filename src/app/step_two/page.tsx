@@ -22,6 +22,8 @@ export default function Step2() {
     arcade,
     advanced,
     pro,
+    filledStep2,
+    setFilledStep2,
   } = useContext(AppContext);
 
   let price1 = "R$9/m";
@@ -36,6 +38,12 @@ export default function Step2() {
     price1 = "R$90/m";
     price2 = "R$120/m";
     price3 = "R$150/m";
+  }
+
+  if(!arcade && !advanced && !pro) {
+    setFilledStep2(false)
+  } else {
+    setFilledStep2(true)
   }
 
   return (
@@ -96,7 +104,7 @@ export default function Step2() {
             {yearly ? <span>Anual</span> : <p>Anual</p>}
           </section>
         </StyledForm2>
-        <LinkSection hrefBack="/" hrefNext="/step_three" display={true} />
+        <LinkSection hrefBack="/" hrefNext="/step_three" display={true} filled={filledStep2} />
       </FormContainer>
     </Container>
   );
