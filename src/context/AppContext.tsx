@@ -1,14 +1,21 @@
 "use client";
 
-import { useState, ReactNode, createContext, ChangeEvent, Dispatch, SetStateAction } from "react";
+import {
+  useState,
+  ReactNode,
+  createContext,
+  ChangeEvent,
+  Dispatch,
+  SetStateAction,
+} from "react";
 
 type AppContextType = {
-  handleUserName: (e: ChangeEvent<HTMLInputElement>) => void;
-  handleUserEmail: (e: ChangeEvent<HTMLInputElement>) => void;
-  handleUserPhone: (e: ChangeEvent<HTMLInputElement>) => void;
   userName: string;
   userEmail: string;
   userPhone: string;
+  handleUserName: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleUserEmail: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleUserPhone: (e: ChangeEvent<HTMLInputElement>) => void;
   yearly: boolean;
   arcade: boolean;
   advanced: boolean;
@@ -17,19 +24,29 @@ type AppContextType = {
   handleArcade: () => void;
   handleAdvanced: () => void;
   handlePro: () => void;
+  sup: boolean;
+  storage: boolean;
+  profile: boolean;
+  handleSup: () => void;
+  handleStorage: () => void;
+  handleProfile: () => void;
   filledStep1: boolean;
   setFilledStep1: Dispatch<SetStateAction<boolean>>;
   filledStep2: boolean;
   setFilledStep2: Dispatch<SetStateAction<boolean>>;
+  filledStep3: boolean;
+  setFilledStep3: Dispatch<SetStateAction<boolean>>;
+  filledStep4: boolean;
+  setFilledStep4: Dispatch<SetStateAction<boolean>>;
 };
 
 export const AppContext = createContext<AppContextType>({
-  handleUserName: () => {},
-  handleUserEmail: () => {},
-  handleUserPhone: () => {},
   userName: "",
   userEmail: "",
   userPhone: "",
+  handleUserName: () => {},
+  handleUserEmail: () => {},
+  handleUserPhone: () => {},
   yearly: false,
   arcade: false,
   advanced: false,
@@ -38,14 +55,24 @@ export const AppContext = createContext<AppContextType>({
   handleArcade: () => {},
   handleAdvanced: () => {},
   handlePro: () => {},
+  sup: false,
+  storage: false,
+  profile: false,
+  handleSup: () => {},
+  handleStorage: () => {},
+  handleProfile: () => {},
   filledStep1: false,
   setFilledStep1: () => {},
   filledStep2: false,
   setFilledStep2: () => {},
+  filledStep3: false,
+  setFilledStep3: () => {},
+  filledStep4: false,
+  setFilledStep4: () => {},
 });
 
 export function AppContextProvider({ children }: { children: ReactNode }) {
-  //          ***************  States do Step 1  ***************
+  //          ---------------  States do Step 1  ---------------
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPhone, setUserPhone] = useState("");
@@ -58,6 +85,17 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
   const [advanced, setAdvanced] = useState(false);
   const [pro, setPro] = useState(false);
   const [filledStep2, setFilledStep2] = useState(false);
+
+  //          ---------------  States do Step 3  ---------------
+
+  const [filledStep3, setFilledStep3] = useState(false);
+  const [sup, setSup] = useState(false);
+  const [storage, setStorage] = useState(false);
+  const [profile, setProfile] = useState(false);
+
+  //          ---------------  States do Step 4  ---------------
+
+  const [filledStep4, setFilledStep4] = useState(false);
 
   //          ***************  Functions do Step 1  ***************
 
@@ -73,7 +111,7 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
     setUserPhone(e.target.value);
   };
 
-  //          ---------------  Functions do Step 2  ---------------
+  //          ***************  Functions do Step 2  ***************
 
   const handleYearly = () => {
     yearly ? setYearly(false) : setYearly(true);
@@ -97,27 +135,53 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
     setPro(true);
   };
 
+  //          ***************  Functions do Step 3  ***************
+
+  const handleSup = () => {
+    !sup ? setSup(true) : setSup(false);
+  };
+
+  const handleStorage = () => {
+    !storage ? setStorage(true) : setStorage(false);
+  };
+
+  const handleProfile = () => {
+    !profile ? setProfile(true) : setProfile(false);
+  };
+
+  //          ***************  Functions do Step 4  ***************
+
   return (
     <AppContext.Provider
       value={{
         userName,
         userEmail,
         userPhone,
+        handleUserName,
+        handleUserEmail,
+        handleUserPhone,
         yearly,
         arcade,
         advanced,
         pro,
-        filledStep1,
-        filledStep2,
-        handleUserName,
-        handleUserEmail,
-        handleUserPhone,
         handleYearly,
         handleArcade,
         handleAdvanced,
         handlePro,
+        sup,
+        storage,
+        profile,
+        handleSup,
+        handleStorage,
+        handleProfile,
+        filledStep1,
+        filledStep2,
+        filledStep3,
+        filledStep4,
         setFilledStep1,
         setFilledStep2,
+        setFilledStep3,
+        setFilledStep4,
       }}
     >
       {children}

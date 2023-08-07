@@ -47,6 +47,7 @@ export default function Step4() {
           hrefBack="/step_three"
           hrefNext="/step_five"
           display={true}
+          filled={true}
         />
       </FormContainer>
     </Container>

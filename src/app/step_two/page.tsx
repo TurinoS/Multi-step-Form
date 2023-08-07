@@ -40,10 +40,10 @@ export default function Step2() {
     price3 = "R$150/m";
   }
 
-  if(!arcade && !advanced && !pro) {
-    setFilledStep2(false)
-  } else {
+  if(arcade || advanced || pro) {
     setFilledStep2(true)
+  } else {
+    setFilledStep2(false)
   }
 
   return (

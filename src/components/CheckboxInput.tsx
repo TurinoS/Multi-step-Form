@@ -44,13 +44,15 @@ interface CheckboxInputProps {
     subtitle: string,
     price: string,
     time: string,
+    checked: boolean,
+    handleFunction: () => void;
 }
 
-export default function CheckboxInput({ label, formStep, formName, subtitle, price, time }: CheckboxInputProps) {
+export default function CheckboxInput({ label, formStep, formName, subtitle, price, time, handleFunction, checked }: CheckboxInputProps) {
     return(
         <StyledCheckboxInput>
             <div>
-                <input type='checkbox' id={formStep} name={formName} value={label} />
+                <input type='checkbox' id={formStep} name={formName} value={label} onChange={handleFunction} checked={checked} />
                 <label htmlFor={formStep}>
                     {label}
                     <p>{subtitle}</p>
