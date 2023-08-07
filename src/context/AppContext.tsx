@@ -6,11 +6,14 @@ type AppContextType = {
   handleUserName: (e: ChangeEvent<HTMLInputElement>) => void;
   handleUserEmail: (e: ChangeEvent<HTMLInputElement>) => void;
   handleUserPhone: (e: ChangeEvent<HTMLInputElement>) => void;
-  handleYearly: () => void;
+  userName: string;
+  userEmail: string;
+  userPhone: string;
   yearly: boolean;
   arcade: boolean;
   advanced: boolean;
   pro: boolean;
+  handleYearly: () => void;
   handleArcade: () => void;
   handleAdvanced: () => void;
   handlePro: () => void;
@@ -20,11 +23,14 @@ export const AppContext = createContext<AppContextType>({
   handleUserName: () => {},
   handleUserEmail: () => {},
   handleUserPhone: () => {},
-  handleYearly: () => {},
+  userName: '',
+  userEmail: '',
+  userPhone: '',
   yearly: false,
   arcade: false,
   advanced: false,
   pro: false,
+  handleYearly: () => {},
   handleArcade: () => {},
   handleAdvanced: () => {},
   handlePro: () => {},
@@ -61,43 +67,42 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
 
   const handleYearly = () => {
     yearly ? setYearly(false) : setYearly(true);
-    console.log(yearly);
   };
 
   const handleArcade = () => {
     setArcade(true);
     setAdvanced(false);
     setPro(false);
-    console.log(`arcade:${arcade} advanced:${advanced}, pro:${pro}`);
   };
 
   const handleAdvanced = () => {
     setArcade(false);
     setAdvanced(true);
     setPro(false);
-    console.log(`arcade:${arcade} advanced:${advanced}, pro:${pro}`);
   };
 
   const handlePro = () => {
     setArcade(false);
     setAdvanced(false);
     setPro(true);
-    console.log(`arcade:${arcade} advanced:${advanced}, pro:${pro}`);
   };
 
   return (
     <AppContext.Provider
       value={{
+        userName,
+        userEmail,
+        userPhone,
+          yearly,
+          arcade,
+          advanced,
+          pro,
         handleUserName,
         handleUserEmail,
         handleUserPhone,
         handleYearly,
-        yearly,
-        arcade,
         handleArcade,
-        advanced,
         handleAdvanced,
-        pro,
         handlePro,
       }}
     >

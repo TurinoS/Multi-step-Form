@@ -9,7 +9,7 @@ import { FormContainer, StyledForm1 } from "@/styles/StyledForms";
 import { AppContext } from '@/context/AppContext';
 
 export default function Home() {
-  const { handleUserName, handleUserEmail, handleUserPhone } = useContext(AppContext)
+  const { handleUserName, handleUserEmail, handleUserPhone, userName, userEmail, userPhone } = useContext(AppContext)
 
   return (
     <Container>
@@ -25,17 +25,19 @@ export default function Home() {
           <p>Por favor informe seu nome, email e telefone</p>
         </div>
         <StyledForm1>
-          <TextInput label="Nome" name="name" placeholder="ex: Luiz da Silva" handleFunction={(e) => handleUserName(e)} />
+          <TextInput label="Nome" name="name" placeholder="ex: Luiz da Silva" value={userName} handleFunction={(e) => handleUserName(e)} />
           <TextInput
             label="E-mail"
             name="email"
             placeholder="ex: luiz@silva.com"
+            value={userEmail}
             handleFunction={(e) => handleUserEmail(e)}
           />
           <TextInput
             label="Telefone"
             name="phone"
             placeholder="ex: +55 (12) 34567-8989"
+            value={userPhone}
             handleFunction={(e) => handleUserPhone(e)}
           />
         </StyledForm1>

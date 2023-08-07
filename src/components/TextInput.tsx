@@ -13,14 +13,15 @@ interface InputProps {
     label: string,
     name: string,
     placeholder: string,
+    value: string,
     handleFunction: (e: ChangeEvent<HTMLInputElement>) => void,
 }
 
-export default function TextInput({ name, placeholder, label, handleFunction }: InputProps) {
+export default function TextInput({ name, placeholder, label, value, handleFunction }: InputProps) {
     return(
         <>
             <label htmlFor={name}>{label}</label>
-            <StyledInput type='text' name={name} id={name} placeholder={placeholder} onChange={handleFunction} required />
+            <StyledInput type='text' name={name} id={name} placeholder={placeholder} onChange={handleFunction} value={value} />
         </>
     )
 }
