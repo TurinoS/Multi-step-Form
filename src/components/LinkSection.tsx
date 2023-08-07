@@ -41,17 +41,34 @@ const StyledLinkSection = styled.div`
 `;
 
 interface LinkSectionProps {
-  hrefBack: string,
-  hrefNext: string,
-  display: boolean,
-  filled: boolean,
+  hrefBack: string;
+  hrefNext: string;
+  display: boolean;
+  filled: boolean;
 }
 
-export default function LinkSection({ hrefBack, hrefNext, display, filled }: LinkSectionProps) {
+export default function LinkSection({
+  hrefBack,
+  hrefNext,
+  display,
+  filled,
+}: LinkSectionProps) {
   return (
     <StyledLinkSection>
-      {display ? <Link href={hrefBack} className="display">Voltar</Link> : <div></div>}
-      {!filled ? <div className="unfilled">Próximo</div> : <Link href={hrefNext} className="button-style">Próximo</Link>}
+      {display ? (
+        <Link href={hrefBack} className="display">
+          Voltar
+        </Link>
+      ) : (
+        <div></div>
+      )}
+      {!filled ? (
+        <div className="unfilled">Próximo</div>
+      ) : (
+        <Link href={hrefNext} className="button-style">
+          Próximo
+        </Link>
+      )}
     </StyledLinkSection>
   );
 }

@@ -84,43 +84,41 @@ export default function RadioInput({
   handleFunction,
   selected,
 }: RadioInputProps) {
-
-    if(selected) {
-        return (
-            <StyledRadioInputSelected>
-              <label htmlFor={formStep}>
-                <Image src={imgSrc} alt="icon" width={35} height={35} />
-                {label}
-              </label>
-              <span>{price}</span>
-              {!yearly ? <p className="discount">2 meses grátis</p> : null}
-              <input
-                type="radio"
-                id={formStep}
-                name={formName}
-                value={label}
-                onChange={handleFunction}
-              />
-            </StyledRadioInputSelected>
-          );
-    } else {
-        return (
-            <StyledRadioInput>
-              <label htmlFor={formStep}>
-                <Image src={imgSrc} alt="icon" width={35} height={35} />
-                {label}
-              </label>
-              <span>{price}</span>
-              {!yearly ? <p className="discount">2 meses grátis</p> : null}
-              <input
-                type="radio"
-                id={formStep}
-                name={formName}
-                value={label}
-                onChange={handleFunction}
-              />
-            </StyledRadioInput>
-          );
-    }
-  
+  if (selected) {
+    return (
+      <StyledRadioInputSelected>
+        <label htmlFor={formStep}>
+          <Image src={imgSrc} alt="icon" width={35} height={35} />
+          {label}
+        </label>
+        <span>{price}</span>
+        {!yearly ? <p className="discount">2 meses grátis</p> : null}
+        <input
+          type="radio"
+          id={formStep}
+          name={formName}
+          value={label}
+          onChange={handleFunction}
+        />
+      </StyledRadioInputSelected>
+    );
+  } else {
+    return (
+      <StyledRadioInput>
+        <label htmlFor={formStep}>
+          <Image src={imgSrc} alt="icon" width={35} height={35} />
+          {label}
+        </label>
+        <span>{price}</span>
+        {!yearly ? <p className="discount">2 meses grátis</p> : null}
+        <input
+          type="radio"
+          id={formStep}
+          name={formName}
+          value={label}
+          onChange={handleFunction}
+        />
+      </StyledRadioInput>
+    );
+  }
 }

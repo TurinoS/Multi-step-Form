@@ -4,10 +4,10 @@ import bg from "../assets/bg-sidebar-desktop.svg";
 export const Container = styled.div`
   background-color: var(--white);
   box-shadow: 2px 2px 6px 2px var(--pastel-blue);
-  margin: 10vh auto;
+  margin: 5vh auto;
   padding: 1em;
   width: 60vw;
-  height: 80vh;
+  height: 90vh;
   border-radius: 15px;
   display: flex;
 `;
@@ -21,5 +21,5 @@ export const StepsContainer = styled.section`
   background: url(${bg.src});
   background-repeat: no-repeat;
   background-size: 100%;
-  width: 30%;
+  width: 40%;
 `;

@@ -5,7 +5,7 @@ export const FormContainer = styled.section`
   flex-direction: column;
   justify-content: space-between;
   gap: 0.5em;
-  padding: 2em 4em;
+  padding: 2em 3em;
   width: 70%;
 
   & h1 {

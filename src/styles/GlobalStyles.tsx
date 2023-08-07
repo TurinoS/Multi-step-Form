@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     :root {
@@ -29,4 +29,4 @@ export const GlobalStyle = createGlobalStyle`
         max-height: 100vw;
         width: 100%;
     }
-`
+`;

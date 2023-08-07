@@ -31,19 +31,19 @@ export default function Step2() {
   let price3 = "R$15/m";
 
   if (yearly) {
-    price1 = "R$9/m";
-    price2 = "R$12/m";
-    price3 = "R$15/m";
+    price1 = "R$9/mês";
+    price2 = "R$12/mês";
+    price3 = "R$15/mês";
   } else {
-    price1 = "R$90/m";
-    price2 = "R$120/m";
-    price3 = "R$150/m";
+    price1 = "R$90/ano";
+    price2 = "R$120/ano";
+    price3 = "R$150/ano";
   }
 
-  if(arcade || advanced || pro) {
-    setFilledStep2(true)
+  if (arcade || advanced || pro) {
+    setFilledStep2(true);
   } else {
-    setFilledStep2(false)
+    setFilledStep2(false);
   }
 
   return (
@@ -104,7 +104,12 @@ export default function Step2() {
             {yearly ? <span>Anual</span> : <p>Anual</p>}
           </section>
         </StyledForm2>
-        <LinkSection hrefBack="/" hrefNext="/step_three" display={true} filled={filledStep2} />
+        <LinkSection
+          hrefBack="/"
+          hrefNext="/step_three"
+          display={true}
+          filled={filledStep2}
+        />
       </FormContainer>
     </Container>
   );

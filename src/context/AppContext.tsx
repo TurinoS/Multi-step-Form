@@ -30,14 +30,14 @@ type AppContextType = {
   handleSup: () => void;
   handleStorage: () => void;
   handleProfile: () => void;
+  price: number;
+  setPrice: Dispatch<SetStateAction<number>>;
   filledStep1: boolean;
   setFilledStep1: Dispatch<SetStateAction<boolean>>;
   filledStep2: boolean;
   setFilledStep2: Dispatch<SetStateAction<boolean>>;
   filledStep3: boolean;
   setFilledStep3: Dispatch<SetStateAction<boolean>>;
-  filledStep4: boolean;
-  setFilledStep4: Dispatch<SetStateAction<boolean>>;
 };
 
 export const AppContext = createContext<AppContextType>({
@@ -61,14 +61,14 @@ export const AppContext = createContext<AppContextType>({
   handleSup: () => {},
   handleStorage: () => {},
   handleProfile: () => {},
+  price: 0,
+  setPrice: () => {},
   filledStep1: false,
   setFilledStep1: () => {},
   filledStep2: false,
   setFilledStep2: () => {},
   filledStep3: false,
   setFilledStep3: () => {},
-  filledStep4: false,
-  setFilledStep4: () => {},
 });
 
 export function AppContextProvider({ children }: { children: ReactNode }) {
@@ -95,7 +95,7 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
 
   //          ---------------  States do Step 4  ---------------
 
-  const [filledStep4, setFilledStep4] = useState(false);
+  const [price, setPrice] = useState(0)
 
   //          ***************  Functions do Step 1  ***************
 
@@ -174,14 +174,14 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
         handleSup,
         handleStorage,
         handleProfile,
+        price,
+        setPrice,
         filledStep1,
         filledStep2,
         filledStep3,
-        filledStep4,
         setFilledStep1,
         setFilledStep2,
         setFilledStep3,
-        setFilledStep4,
       }}
     >
       {children}

@@ -1,20 +1,29 @@
 "use client";
 
-import { useContext } from 'react';
+import { useContext } from "react";
 import Steps from "@/components/Steps";
 import LinkSection from "@/components/LinkSection";
 import TextInput from "@/components/TextInput";
 import { Container, StepsContainer } from "@/styles/Container";
 import { FormContainer, StyledForm1 } from "@/styles/StyledForms";
-import { AppContext } from '@/context/AppContext';
+import { AppContext } from "@/context/AppContext";
 
 export default function Home() {
-  const { handleUserName, handleUserEmail, handleUserPhone, userName, userEmail, userPhone, filledStep1, setFilledStep1 } = useContext(AppContext)
+  const {
+    handleUserName,
+    handleUserEmail,
+    handleUserPhone,
+    userName,
+    userEmail,
+    userPhone,
+    filledStep1,
+    setFilledStep1,
+  } = useContext(AppContext);
 
-  if(userName.length > 3 && userEmail.length > 9 && userPhone.length > 10) {
-    setFilledStep1(true)
+  if (userName.length > 3 && userEmail.length > 9 && userPhone.length > 10) {
+    setFilledStep1(true);
   } else {
-    setFilledStep1(false)
+    setFilledStep1(false);
   }
 
   return (
@@ -31,7 +40,13 @@ export default function Home() {
           <p>Por favor informe seu nome, email e telefone</p>
         </div>
         <StyledForm1>
-          <TextInput label="Nome" name="name" placeholder="ex: Luiz da Silva" value={userName} handleFunction={(e) => handleUserName(e)} />
+          <TextInput
+            label="Nome"
+            name="name"
+            placeholder="ex: Luiz da Silva"
+            value={userName}
+            handleFunction={(e) => handleUserName(e)}
+          />
           <TextInput
             label="E-mail"
             name="email"
@@ -47,7 +62,12 @@ export default function Home() {
             handleFunction={(e) => handleUserPhone(e)}
           />
         </StyledForm1>
-        <LinkSection hrefBack="/" hrefNext="/step_two" display={false} filled={filledStep1} />
+        <LinkSection
+          hrefBack="/"
+          hrefNext="/step_two"
+          display={false}
+          filled={filledStep1}
+        />
       </FormContainer>
     </Container>
   );
