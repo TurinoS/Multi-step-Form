@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useContext } from "react";
 import Switch from "react-switch";
 import icon1 from "../../assets/icon1.svg";
 import icon2 from "../../assets/icon2.svg";
@@ -9,10 +9,34 @@ import Steps from "@/components/Steps";
 import RadioInput from "@/components/RadioInput";
 import LinkSection from "@/components/LinkSection";
 import { Container, StepsContainer } from "@/styles/Container";
-import { FormContainer, StyledForm2 } from "@/components/StyledForms";
+import { FormContainer, StyledForm2 } from "@/styles/StyledForms";
+import { AppContext } from "@/context/AppContext";
 
 export default function Step2() {
-  const [Yearly, setYearly] = useState(false);
+  const {
+    handleYearly,
+    yearly,
+    handleArcade,
+    handleAdvanced,
+    handlePro,
+    arcade,
+    advanced,
+    pro,
+  } = useContext(AppContext);
+
+  let price1 = "R$9/m";
+  let price2 = "R$12/m";
+  let price3 = "R$15/m";
+
+  if (yearly) {
+    price1 = "R$9/m";
+    price2 = "R$12/m";
+    price3 = "R$15/m";
+  } else {
+    price1 = "R$90/m";
+    price2 = "R$120/m";
+    price3 = "R$150/m";
+  }
 
   return (
     <Container>
@@ -33,37 +57,43 @@ export default function Step2() {
             formStep="1"
             formName="step2"
             imgSrc={icon1}
-            price="9"
-            time="m"
+            price={price1}
+            yearly={yearly}
+            handleFunction={handleArcade}
+            selected={arcade}
           />
           <RadioInput
             label="Avançado"
             formStep="2"
             formName="step2"
             imgSrc={icon2}
-            price="12"
-            time="m"
+            price={price2}
+            yearly={yearly}
+            handleFunction={handleAdvanced}
+            selected={advanced}
           />
           <RadioInput
             label="Profissional"
             formStep="3"
             formName="step2"
             imgSrc={icon3}
-            price="15"
-            time="m"
+            price={price3}
+            yearly={yearly}
+            handleFunction={handlePro}
+            selected={pro}
           />
           <section>
-            <p>Mensal</p>
+            {!yearly ? <span>Mensal</span> : <p>Mensal</p>}
             <Switch
-              onChange={() => (Yearly ? setYearly(false) : setYearly(true))}
-              checked={false}
+              onChange={handleYearly}
+              checked={yearly ? false : true}
               checkedIcon={false}
               uncheckedIcon={false}
               handleDiameter={16}
               height={20}
               width={40}
             />
-            <p>Anual</p>
+            {yearly ? <span>Anual</span> : <p>Anual</p>}
           </section>
         </StyledForm2>
         <LinkSection hrefBack="/" hrefNext="/step_three" display={true} />

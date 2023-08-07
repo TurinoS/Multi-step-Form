@@ -4,7 +4,7 @@ import Steps from "@/components/Steps";
 import LinkSection from "@/components/LinkSection";
 import CheckboxInput from "@/components/CheckboxInput";
 import { Container, StepsContainer } from "@/styles/Container";
-import { FormContainer, StyledForm3 } from "@/components/StyledForms";
+import { FormContainer, StyledForm3 } from "@/styles/StyledForms";
 
 export default function Step3() {
   return (

@@ -5,7 +5,7 @@ import Steps from "@/components/Steps";
 import LinkSection from "@/components/LinkSection";
 import TextInput from "@/components/TextInput";
 import { Container, StepsContainer } from "@/styles/Container";
-import { FormContainer, StyledForm1 } from "@/components/StyledForms";
+import { FormContainer, StyledForm1 } from "@/styles/StyledForms";
 import { AppContext } from '@/context/AppContext';
 
 export default function Home() {

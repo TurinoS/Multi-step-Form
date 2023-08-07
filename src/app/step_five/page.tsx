@@ -4,7 +4,7 @@ import Image from "next/image";
 import check from "../../assets/icon-thank-you.svg";
 import Steps from "@/components/Steps";
 import { Container, StepsContainer } from "@/styles/Container";
-import { StyledStep5 } from "@/components/StyledForms";
+import { StyledStep5 } from "@/styles/StyledForms";
 
 export default function Step4() {
   return (

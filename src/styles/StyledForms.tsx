@@ -35,6 +35,14 @@ export const StyledForm2 = styled.form`
     width: 100%;
     padding: 0.5em;
     border-radius: 5px;
+
+    & p {
+      font-weight: 600;
+    }
+
+    & span {
+      color: var(--cool-gray);
+    }
   }
 `;
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Steps from "@/components/Steps";
 import LinkSection from "@/components/LinkSection";
 import { Container, StepsContainer } from "@/styles/Container";
-import { FormContainer, StyledForm4, Total } from "@/components/StyledForms";
+import { FormContainer, StyledForm4, Total } from "@/styles/StyledForms";
 
 export default function Step4() {
   return (
