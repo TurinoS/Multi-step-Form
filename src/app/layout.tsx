@@ -1,9 +1,7 @@
 import { AppContextProvider } from '@/context/AppContext'
 import { GlobalStyle } from '@/styles/GlobalStyles'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import StyledComponentsRegistry from '../../registry'
 
 export const metadata: Metadata = {
   title: 'Multi Step Form',
@@ -19,7 +17,11 @@ export default function RootLayout({
     <html lang="en">
       <AppContextProvider>
         <GlobalStyle />
-        <body className={inter.className}>{children}</body>
+        <body>
+          <StyledComponentsRegistry>
+            {children}
+          </StyledComponentsRegistry>
+        </body>
       </AppContextProvider>
     </html>
   )
