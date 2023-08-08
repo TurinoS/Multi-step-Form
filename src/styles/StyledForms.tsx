@@ -150,6 +150,10 @@ export const StyledStep5 = styled.div`
   justify-content: center;
   gap: 0.75em;
 
+  @media (max-width: 650px) {
+    width: 100%;
+  }
+
   & img {
     margin-bottom: 1em;
   }

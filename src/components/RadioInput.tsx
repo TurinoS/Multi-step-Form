@@ -84,6 +84,7 @@ const StyledRadioInputSelected = styled.div`
     width: 100%;
     margin-bottom: .5em;
     flex-direction: row;
+    border: 2px solid var(--marine-blue);
 
     & label {
       display: flex;
