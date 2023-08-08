@@ -5,8 +5,16 @@ export const FormContainer = styled.section`
   flex-direction: column;
   justify-content: space-between;
   gap: 0.5em;
-  padding: 2em 3em;
+  padding: 1.5em 3em;
   width: 70%;
+
+  @media (max-width: 850px) {
+    padding: 1.5em 1em;
+  }
+
+  @media (max-width: 650px) {
+    width: 100%;
+  }
 
   & h1 {
     font-size: 32px;
@@ -25,6 +33,10 @@ export const StyledForm2 = styled.form`
   flex-wrap: wrap;
   margin-top: 1em;
   gap: 0.25em;
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
 
   & section {
     background-color: var(--light-gray);
@@ -67,7 +79,7 @@ export const StyledForm3 = styled.form`
 export const StyledForm4 = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 1em;
+  margin-top: .5em;
   gap: 0.25em;
   background-color: var(--light-gray);
   border-radius: 10px;

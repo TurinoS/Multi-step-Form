@@ -12,14 +12,41 @@ const StyledRadioInput = styled.div`
   gap: 0.25em;
   font-weight: 600;
 
+  @media (max-width: 850px) {
+    padding: 0.8em .5em;
+  }
+
+  @media (max-width: 650px) {
+    width: 100%;
+    margin-bottom: .5em;
+    flex-direction: row;
+
+    & label {
+      display: flex;
+      align-items: flex-start;
+      gap: 1em;
+      width: 150px;
+    }
+  }
+
   & img {
     margin: 0 2.5em 2.5em 0;
+
+    @media (max-width: 650px) {
+      margin: 0;
+    }
   }
 
   & span {
     font-weight: 400;
     font-size: 15px;
     color: var(--cool-gray);
+
+    @media (max-width: 650px) {
+      align-self: flex-end;
+      position: relative;
+      left: -102px;
+    }
   }
 
   & input {
@@ -29,6 +56,12 @@ const StyledRadioInput = styled.div`
   & p {
     font-size: 14px;
     font-weight: 400;
+    min-width: 92px;
+    text-align: end;
+
+    @media (max-width: 420px) {
+      display: none;
+    }
   }
 `;
 
@@ -36,21 +69,48 @@ const StyledRadioInputSelected = styled.div`
   width: 32.5%;
   padding: 0.8em 1em;
   margin-bottom: 1em;
-  border: 2px solid var(--marine-blue);
+  border: 1px solid var(--marine-blue);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   gap: 0.25em;
   font-weight: 600;
 
+  @media (max-width: 850px) {
+    padding: 0.8em .5em;
+  }
+
+  @media (max-width: 650px) {
+    width: 100%;
+    margin-bottom: .5em;
+    flex-direction: row;
+
+    & label {
+      display: flex;
+      align-items: flex-start;
+      gap: 1em;
+      width: 150px;
+    }
+  }
+
   & img {
     margin: 0 2.5em 2.5em 0;
+
+    @media (max-width: 650px) {
+      margin: 0;
+    }
   }
 
   & span {
     font-weight: 400;
     font-size: 15px;
     color: var(--cool-gray);
+
+    @media (max-width: 650px) {
+      align-self: flex-end;
+      position: relative;
+      left: -102px;
+    }
   }
 
   & input {
@@ -60,6 +120,12 @@ const StyledRadioInputSelected = styled.div`
   & p {
     font-size: 14px;
     font-weight: 400;
+    min-width: 92px;
+    text-align: end;
+
+    @media (max-width: 420px) {
+      display: none;
+    }
   }
 `;
 

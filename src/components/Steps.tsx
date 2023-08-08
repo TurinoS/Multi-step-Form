@@ -6,6 +6,14 @@ const StyledSteps = styled.div`
   gap: 0.5em;
   color: var(--pastel-blue);
 
+  @media (max-width: 650px) {
+    margin: 0 auto;
+
+    & div {
+      display: none;
+    }
+  }
+
   & span {
     font-size: 24px;
     font-weight: 600;
